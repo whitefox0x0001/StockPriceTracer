@@ -6,8 +6,10 @@ import plotly
 from app.health.system_health import system_boot_check
 from app.health.system_health import system_health_ok
 def main():
-    system_boot_check()
-    system_health_ok()
+    if not(system_boot_check()):
+        print("boot failed")
+    else:
+        system_health_ok()
 if __name__ == "__main__":
     main()
 
